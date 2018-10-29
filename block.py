@@ -17,7 +17,8 @@ def init_blockchain():
 def edit_blockchain(newblockchain):
     print(newblockchain)
     print(blockchain)
-    blockchain = newblockchain
+    blockchain.clear()
+    blockchain.append(newblockchain)
 
 def record_new_block(sender, amount, recipient):
     previous_block = blockchain[-1]
