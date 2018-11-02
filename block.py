@@ -1,12 +1,19 @@
-''' 
-Extend your programme with the following:
-- terminal user interface
+import hashlib as hl
+import json
 
-    hack/edit the blockchain
+string = "This is data to hash!"
 
-implement a function that checks the integrity of the blockchain
+hashed = hl.sha256(string.encode()).hexdigest()
+print(hashed)
 
-'''
+dictionary = { 'key1': 1,
+               'key2': 2
+               }
+
+string_json = json.dumps(dictionary, sort_keys=True)
+print(string_json)
+
+print("before program \n")
 
 blockchain = []
 genesis_block = ["x",0,"x","genesis"]
