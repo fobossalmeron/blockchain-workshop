@@ -24,6 +24,7 @@ class BlockChain:
         return ash
 
     def add_transaction_to_list(self, transaction):
+        self.check_integrity()
         if transaction.is_valid() and not self.corrupt_chain:
             self.open_transactions.append(transaction)
         else:
@@ -170,6 +171,7 @@ q: Quit\n""")
             amount = float(input("Transaction amount: \n"))
             blockchain.add_transaction_to_list(
                 Transaction(sender, recipient, amount))
+            print("You added the transaction to the queue")
         elif user_input == "2":
             print("\nYou chose to mine a block.\nMining...")
             blockchain.mine_block(miner)
